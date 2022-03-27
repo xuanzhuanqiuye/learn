@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+	<h1>库存信息</h1>
+	<hr>
+	<ul>
+		<li v-for="newlist in newslists">
+			{{ newlist.title }}--> {{ newlist.digest }}
+		</li>
+	</ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+	const app = new Vue({
+		el: '#app',
+		data:{
+			  "code": 200,
+			  "msg": "success",
+			  "newslists": [
+				{
+				  "title": "广东东莞报告2例无症状感染者",
+				  "hotnum": 7608117,
+				  "digest": "12月13日，广东东莞市大朗镇在对返莞人员核酸检测中，发现2例新冠肺炎无症状感染者。目前两人已转运至定点收治医院隔离治疗。"
+				},
+				{
+				  "title": "汉文帝霸陵确定为西安江村大墓",
+				  "hotnum": 4385084,
+				  "digest": "12月14日，国家文物局在北京召开线上会议，考古队员通过精细发掘和缜密分析，判断出“江村大墓”就是汉文帝的霸陵。"
+				},
+				{
+				  "title": "浙江新增本土确诊44例",
+				  "hotnum": 3491764,
+				  "digest": "12月13日0-24时，浙江新增确诊病例45例，其中杭州市2例、宁波市4例、绍兴市38例、境外输入1例(刚果金输入)。"
+				}
+			  ]
+		}
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+	<h1>库存信息</h1>
+    <hr>
+	<ul>
+		<li v-for="product in products">
+			{{ product.name }} - {{ product.quantity }}
+			<span v-if="product.quantity === 0">
+				已经售罄
+			</span>
+		</li>
+	</ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+	const app = new Vue({
+		el: '#app',
+		data: {
+			products: [
+				{"id": 1, "name": "iPhone X", "quantity": 20},
+				{"id": 2, "name": "华为 Mate20", "quantity": 0},
+				{"id": 3, "name": "小米 Mix3", "quantity": 50}
+			]
+		}
+	});
+</script>
+
+</body>
+</html>
